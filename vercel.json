@@ -1,5 +1,9 @@
 {
+  "buildCommand": "cd healthbridge-web && npm install && npm run build",
+  "outputDirectory": "healthbridge-web/dist",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
-  ]
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
 }
