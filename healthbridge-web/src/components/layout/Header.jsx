@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import LanguageSelector from '../LanguageSelector';
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,6 +28,7 @@ function Header() {
             >
               Start Chat
             </Link>
+            <LanguageSelector />
           </nav>
 
           {/* Mobile Menu Button */}
@@ -65,6 +67,9 @@ function Header() {
               >
                 Start Chat
               </Link>
+              <div className="mt-2">
+                <LanguageSelector />
+              </div>
             </nav>
           </div>
         )}

@@ -7,6 +7,7 @@ import HomePage from './components/HomePage'
 import ChatPage from './components/ChatPage'
 import AboutPage from './components/AboutPage'
 import PageTransition from './components/PageTransition'
+import { LanguageProvider } from './contexts/LanguageContext'
 
 // AnimatedRoutes component to handle route transitions
 function AnimatedRoutes() {
@@ -37,8 +38,10 @@ function AnimatedRoutes() {
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Router>
-      <AnimatedRoutes />
-    </Router>
+    <LanguageProvider>
+      <Router>
+        <AnimatedRoutes />
+      </Router>
+    </LanguageProvider>
   </React.StrictMode>
 )
