@@ -119,7 +119,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 📞 Contact
 
-Andrew Vong - [andrew@reachmed.com](mailto:andrew@reachmed.com)
+Andrew Vong - [andrewvong426@gmail.com](mailto:andrewvong426@gmail.com)
 
 Project Link: [https://github.com/yourusername/healthbridge-web](https://github.com/yourusername/healthbridge-web)
 
