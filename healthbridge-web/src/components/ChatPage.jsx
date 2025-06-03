@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ChatBox from './ChatBox';
 import IntakeForm from './IntakeForm';
+import TranslatedText from './TranslatedText';
 
 function ChatPage() {
   const [mode, setMode] = useState('chat'); // 'chat' or 'intake'
