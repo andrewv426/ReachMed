@@ -15,23 +15,15 @@ function ChatPage() {
   };
 
   // Handle GPT response
-  const handleGPTResponse = async (prompt, context = '') => {
-    // In a real app, this would call an API endpoint
-    // For now, we'll simulate a response
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        let response;
-        if (context.toLowerCase().includes('headache')) {
-          response = "Based on your description of headache symptoms, this could be due to several factors such as tension, dehydration, or eye strain. Try drinking water, resting in a quiet, dark room, and consider over-the-counter pain relievers if appropriate. If your headache is severe, sudden, or accompanied by other concerning symptoms like fever or confusion, please seek immediate medical attention.";
-        } else if (context.toLowerCase().includes('stomach')) {
-          response = "Your stomach discomfort could be related to various factors including diet, stress, or minor infections. Consider eating bland foods, staying hydrated, and resting. If you experience severe pain, persistent vomiting, or signs of dehydration, please consult a healthcare provider promptly.";
-        } else {
-          response = "Thank you for sharing your health information. Based on what you've described, I can provide some general information, but it's important to consult with a healthcare professional for proper evaluation. They can provide personalized advice based on your complete medical history and a proper examination.";
-        }
-        resolve(response);
-      }, 1500);
+  async function handleGPTResponse(prompt) {
+    const response = await fetch("/api/llm", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ prompt })
     });
-  };
+    const { text } = await response.json();
+    return text;
+  }
 
   // Handle message sending in chat mode
   const handleSendMessage = async (message, currentMessages) => {
